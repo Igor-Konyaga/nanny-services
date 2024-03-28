@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Igor-Konyaga/nanny-services/static/css/main.7acaea2f.css",
-    "main.js": "/Igor-Konyaga/nanny-services/static/js/main.f9976db9.js",
+    "main.js": "/Igor-Konyaga/nanny-services/static/js/main.824fe887.js",
     "index.html": "/Igor-Konyaga/nanny-services/index.html",
     "main.7acaea2f.css.map": "/Igor-Konyaga/nanny-services/static/css/main.7acaea2f.css.map",
-    "main.f9976db9.js.map": "/Igor-Konyaga/nanny-services/static/js/main.f9976db9.js.map"
+    "main.824fe887.js.map": "/Igor-Konyaga/nanny-services/static/js/main.824fe887.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.f9976db9.js"
+    "static/js/main.824fe887.js"
   ]
 }
