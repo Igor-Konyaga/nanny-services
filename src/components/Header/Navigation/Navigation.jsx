@@ -1,11 +1,11 @@
 import { StyledNav, StyledNavLink } from './Navigation.styled';
 
-export const Navigation = () => {
+export const Navigation = ({ $noHome }) => {
   return (
     <StyledNav>
       <StyledNavLink to={'/'}>Home</StyledNavLink>
       <StyledNavLink to={'nannies'}>Nannies</StyledNavLink>
-      <StyledNavLink to={'favorites'}>Favorites</StyledNavLink>
+      {$noHome ? <StyledNavLink to={'favorites'}>Favorites</StyledNavLink> : ''}
     </StyledNav>
   );
 };

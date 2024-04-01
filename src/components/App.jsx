@@ -7,8 +7,8 @@ import { Favorites } from 'page/Favorites/Favorites';
 export const App = () => {
   return (
     <Routes>
+      <Route index element={<Home />} />
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Home />} />
         <Route path="nannies" element={<Nannies />} />
         <Route path="favorites" element={<Favorites />} />
       </Route>
