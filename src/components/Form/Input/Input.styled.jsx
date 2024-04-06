@@ -22,6 +22,13 @@ export const StyledInputContainer = styled.div`
   }
 
   .form__error {
+    position: absolute;
+    top: 100%;
+    left: 16px;
     display: block;
+
+    color: red;
+    font-size: 12px;
+    letter-spacing: 1px;
   }
 `;
