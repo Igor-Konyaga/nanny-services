@@ -14,7 +14,7 @@ export const CustomForm = ({ registration }) => {
         registration ? initialValuesRegistration : initialValuesLogIn
       }
       validationSchema={schemas.custom}
-      onSubmit={() => console.log('success')}
+      onSubmit={body => console.log(body)}
     >
       <Form className="form">
         {registration && (
@@ -22,6 +22,7 @@ export const CustomForm = ({ registration }) => {
         )}
         <Input name="email" placeholder="Email" id="Email" $mgBt="18px" />
         <Input
+          type="password"
           name="password"
           placeholder="Password"
           id="Password"
