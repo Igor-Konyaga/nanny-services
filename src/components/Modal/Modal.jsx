@@ -19,7 +19,7 @@ export const Modal = ({ children, openModal }) => {
     document.body.addEventListener('keydown', hendleKeydown);
 
     return () => document.body.removeEventListener('keydown', hendleKeydown);
-  }, []);
+  }, [openModal]);
 
   return (
     <StyledModal onClick={handleClickModal}>

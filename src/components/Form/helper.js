@@ -22,8 +22,12 @@ const password = Yup.string()
   .matches(regx.password, 'From 6 to 18 characters in English');
 
 export const schemas = {
-  custom: Yup.object().shape({
+  customRegistration: Yup.object().shape({
     name,
+    email,
+    password,
+  }),
+  customLogin: Yup.object().shape({
     email,
     password,
   }),
