@@ -5,6 +5,7 @@ import { ReactComponent as Check } from '../../images/icon/сheck.svg';
 import { Link } from 'react-router-dom';
 
 export const Home = () => {
+
   return (
     <StyledHomePage>
       <div className="body">

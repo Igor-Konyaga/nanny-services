@@ -1,3 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const StyledNanniesPage = styled.div``
+export const StyledNanniesPage = styled.section`
+  padding-top: 170px;
+  padding-bottom: 100px;
+`;

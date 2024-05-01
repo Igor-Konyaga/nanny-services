@@ -6,23 +6,8 @@ import {
   initialValuesRegistration,
   schemas,
 } from './helper';
-import { useState } from 'react';
 
-export const CustomForm = ({ registration }) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const handleSubmitForm = async (body, { resetForm }) => {
-    try {
-      setIsLoading(true);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setIsLoading(false);
-
-      resetForm();
-    }
-  };
+export const CustomForm = ({ registration, handleSubmit }) => {
   return (
     <Formik
       initialValues={
@@ -31,7 +16,7 @@ export const CustomForm = ({ registration }) => {
       validationSchema={
         registration ? schemas.customRegistration : schemas.customLogin
       }
-      onSubmit={handleSubmitForm}
+      onSubmit={handleSubmit}
     >
       <Form className="form">
         {registration ? (
@@ -47,11 +32,9 @@ export const CustomForm = ({ registration }) => {
           id="Password"
           $mgBt="40px"
         />
-        <CustomButton typeBtn="submit">
+        <CustomButton  typeBtn="submit">
           {registration ? 'Sign Up' : 'Log In'}
         </CustomButton>
-        {isLoading ? <p>Loading...</p> : ''}
-        {error ? <p>{error.message}</p> : ''}
       </Form>
     </Formik>
   );

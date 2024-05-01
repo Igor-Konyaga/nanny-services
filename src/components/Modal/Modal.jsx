@@ -1,12 +1,22 @@
 import { useEffect } from 'react';
 import { StyledModal } from './Modal.styled';
 import { ReactComponent as ExitIcon } from '../../images/icon/exit.svg';
+import { useSelector } from 'react-redux';
 
 export const Modal = ({ children, openModal }) => {
+  const authentication = useSelector(state => state.auth.token);
+
+  useEffect(() => {
+    if (authentication) {
+      openModal(false);
+    }
+  }, [authentication, openModal]);
+
   const handleClickModal = e => {
     if (e.target !== e.currentTarget) {
       return;
     }
+
     openModal(false);
   };
 
