@@ -1,19 +1,23 @@
 {
   "files": {
-    "main.css": "/nanny-services/static/css/main.e9bea48f.css",
-    "main.js": "/nanny-services/static/js/main.629fcf06.js",
+    "main.css": "/nanny-services/static/css/main.6ec31ba6.css",
+    "main.js": "/nanny-services/static/js/main.4a956dbe.js",
     "static/media/bg-img.png": "/nanny-services/static/media/bg-img.4cb160dc1eafcfa37fe2.png",
     "static/media/closed.svg": "/nanny-services/static/media/closed.ed8221d9e58d35e1873bf32bafb5fad2.svg",
+    "static/media/heart.svg": "/nanny-services/static/media/heart.b26039971937e6d6918991f71b6f85ce.svg",
+    "static/media/star.svg": "/nanny-services/static/media/star.879ee94b7890fbc2bb0699327e7e1ce9.svg",
+    "static/media/location.svg": "/nanny-services/static/media/location.131cf25e11ae174a6e3ac4f9c22b735d.svg",
     "static/media/openly.svg": "/nanny-services/static/media/openly.46ff42a5ff3c1562b3b51bbfe3903611.svg",
     "index.html": "/nanny-services/index.html",
+    "static/media/user-icon.svg": "/nanny-services/static/media/user-icon.0a445fe94720825a56f0c470ef3d6203.svg",
     "static/media/arrow top.svg": "/nanny-services/static/media/arrow top.c96ce76f7b1c567acf63eef9cbedcb95.svg",
     "static/media/exit.svg": "/nanny-services/static/media/exit.3d4e820797b8b97d5ee24059233360c7.svg",
     "static/media/сheck.svg": "/nanny-services/static/media/сheck.bcfab1f07d1f418611a80ccdd4978246.svg",
-    "main.e9bea48f.css.map": "/nanny-services/static/css/main.e9bea48f.css.map",
-    "main.629fcf06.js.map": "/nanny-services/static/js/main.629fcf06.js.map"
+    "main.6ec31ba6.css.map": "/nanny-services/static/css/main.6ec31ba6.css.map",
+    "main.4a956dbe.js.map": "/nanny-services/static/js/main.4a956dbe.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9bea48f.css",
-    "static/js/main.629fcf06.js"
+    "static/css/main.6ec31ba6.css",
+    "static/js/main.4a956dbe.js"
   ]
 }
