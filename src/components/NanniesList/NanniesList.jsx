@@ -7,11 +7,19 @@ import { NanniesCard } from './NanniesCard/NanniesCard';
 
 export const NanniesList = () => {
   const { nanniesData } = useSelector(nanniesList);
+  const { favoriteNannies } = useSelector(nanniesList);
+
   const dataLimit = 3;
   const [limit, setLimit] = useState(dataLimit);
 
   const handleLoadMore = () => {
     setLimit(prevLimit => prevLimit + dataLimit);
+  };
+
+  const isFavoriteNanny = nanny => {
+    return favoriteNannies.some(
+      favoriteNanny => favoriteNanny.name === nanny.name
+    );
   };
 
   const validArr = Array.isArray(nanniesData) && nanniesData.length > 0;
@@ -21,7 +29,13 @@ export const NanniesList = () => {
       <ul className="listNannies">
         {validArr
           ? nanniesData.slice(0, limit).map(nanny => {
-              return <NanniesCard key={nanny.name} nanny={nanny} />;
+              return (
+                <NanniesCard
+                  isFavoriteNanny={isFavoriteNanny(nanny.name)}
+                  key={nanny.name}
+                  nanny={nanny}
+                />
+              );
             })
           : ''}
       </ul>

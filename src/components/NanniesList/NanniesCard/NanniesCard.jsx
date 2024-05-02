@@ -5,8 +5,14 @@ import { ReactComponent as IconHeart } from '../../../images/icon/heart.svg';
 import { ReactComponent as IconLocation } from '../../../images/icon/location.svg';
 import { ReactComponent as IconStar } from '../../../images/icon/star.svg';
 import { Reviews } from './Reviews/Reviews';
+import { useDispatch } from 'react-redux';
+import {
+  addFavoriteNannies,
+  deleteFavoriteNannies,
+} from '../../../redux/slices/nanniesData';
 
-export const NanniesCard = ({ nanny }) => {
+export const NanniesCard = ({ nanny, isFavoriteNanny }) => {
+  const dispatch = useDispatch();
   const {
     about,
     avatar_url,
@@ -23,12 +29,18 @@ export const NanniesCard = ({ nanny }) => {
   } = nanny;
 
   const [visibleReviews, setVisibleReviews] = useState(false);
-  const [iSFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(isFavoriteNanny);
 
   const age = new Date().getFullYear() - new Date(birthday).getFullYear();
 
   const handleClickFavorite = () => {
-    setIsFavorite(!iSFavorite);
+    setIsFavorite(!isFavorite);
+
+    if (!isFavorite) {
+      dispatch(addFavoriteNannies(nanny));
+    } else {
+      dispatch(deleteFavoriteNannies(name));
+    }
   };
 
   return (
@@ -60,7 +72,7 @@ export const NanniesCard = ({ nanny }) => {
               className="heartBtn"
               type="button"
             >
-              <IconHeart className={iSFavorite ? 'isFavorite' : ''} />
+              <IconHeart className={isFavorite ? 'isFavorite' : ''} />
             </button>
           </div>
         </div>
