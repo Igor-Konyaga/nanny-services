@@ -1,5 +1,10 @@
-import { StyledFavoritesPage } from "./Favorites.styled";
+import { NanniesFavoriteList } from 'components/NanniesFavoriteList/NanniesFavoriteList';
+import { StyledFavoritesPage } from './Favorites.styled';
 
 export const Favorites = () => {
-  return <StyledFavoritesPage>Favorites</StyledFavoritesPage>;
+  return (
+    <StyledFavoritesPage>
+      <NanniesFavoriteList />
+    </StyledFavoritesPage>
+  );
 };

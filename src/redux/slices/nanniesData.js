@@ -15,6 +15,9 @@ const nanniesSlice = createSlice({
     addFavoriteNannies(state, action) {
       state.favoriteNannies = [...state.favoriteNannies, action.payload];
     },
+    synchronizationLS(state, action) {
+      state.favoriteNannies = action.payload;
+    },
     deleteFavoriteNannies(state, action) {
       state.favoriteNannies = state.favoriteNannies?.filter(
         nanny => nanny.name !== action.payload
@@ -23,7 +26,11 @@ const nanniesSlice = createSlice({
   },
 });
 
-export const { setNannies, addFavoriteNannies, deleteFavoriteNannies } =
-  nanniesSlice.actions;
+export const {
+  setNannies,
+  addFavoriteNannies,
+  deleteFavoriteNannies,
+  synchronizationLS,
+} = nanniesSlice.actions;
 
 export default nanniesSlice.reducer;

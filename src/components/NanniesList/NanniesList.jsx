@@ -31,7 +31,7 @@ export const NanniesList = () => {
           ? nanniesData.slice(0, limit).map(nanny => {
               return (
                 <NanniesCard
-                  isFavoriteNanny={isFavoriteNanny(nanny.name)}
+                  isFavoriteNanny={isFavoriteNanny(nanny)}
                   key={nanny.name}
                   nanny={nanny}
                 />

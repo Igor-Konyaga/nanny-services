@@ -33,12 +33,25 @@ export const NanniesCard = ({ nanny, isFavoriteNanny }) => {
 
   const age = new Date().getFullYear() - new Date(birthday).getFullYear();
 
+  const newFavorite = JSON.parse(localStorage.getItem('favorites')) || [];
+
   const handleClickFavorite = () => {
     setIsFavorite(!isFavorite);
 
     if (!isFavorite) {
       dispatch(addFavoriteNannies(nanny));
+
+      localStorage.setItem(
+        'favorites',
+        JSON.stringify([...newFavorite, nanny])
+      );
     } else {
+      const arrFav = JSON.parse(localStorage.getItem('favorites'));
+
+      const filterFav = arrFav.filter(fav => fav.name !== name);
+
+      localStorage.setItem('favorites', JSON.stringify(filterFav));
+
       dispatch(deleteFavoriteNannies(name));
     }
   };
