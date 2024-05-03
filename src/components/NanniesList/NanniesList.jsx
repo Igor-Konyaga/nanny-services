@@ -4,13 +4,16 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { nanniesList } from '../../redux/selectors/selectors';
 import { NanniesCard } from './NanniesCard/NanniesCard';
+import { sortedData } from 'services/filters';
 
 export const NanniesList = () => {
-  const { nanniesData } = useSelector(nanniesList);
-  const { favoriteNannies } = useSelector(nanniesList);
-
   const dataLimit = 3;
   const [limit, setLimit] = useState(dataLimit);
+
+  const { nanniesData } = useSelector(nanniesList);
+  const { favoriteNannies, filtrationCategory } = useSelector(nanniesList);
+
+  const data = sortedData(filtrationCategory, nanniesData) || nanniesData;
 
   const handleLoadMore = () => {
     setLimit(prevLimit => prevLimit + dataLimit);
@@ -28,7 +31,7 @@ export const NanniesList = () => {
     <StyledWrapperList>
       <ul className="listNannies">
         {validArr
-          ? nanniesData.slice(0, limit).map(nanny => {
+          ? data.slice(0, limit).map(nanny => {
               return (
                 <NanniesCard
                   isFavoriteNanny={isFavoriteNanny(nanny)}

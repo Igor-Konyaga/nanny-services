@@ -5,6 +5,8 @@ export const StyledFilter = styled.div`
   flex-direction: column;
   row-gap: 8px;
 
+  position: relative;
+
   max-width: 226px;
   margin-bottom: 32px;
 
