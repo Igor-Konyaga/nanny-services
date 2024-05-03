@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { getNanniesData } from '../../services/services';
 import { NanniesList } from 'components/NanniesList/NanniesList';
 import { synchronizationLS } from '../../redux/slices/nanniesData';
+import { Filters } from '../../components/Filters/Filters';
 
 export const Nannies = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ export const Nannies = () => {
 
   return (
     <StyledNanniesPage>
+      <Filters />
       <NanniesList />
     </StyledNanniesPage>
   );

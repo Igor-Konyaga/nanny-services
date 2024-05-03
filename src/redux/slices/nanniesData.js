@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   nanniesData: [],
   favoriteNannies: [],
+  filtrationCategory: 'Category',
 };
 
 const nanniesSlice = createSlice({
@@ -15,13 +16,16 @@ const nanniesSlice = createSlice({
     addFavoriteNannies(state, action) {
       state.favoriteNannies = [...state.favoriteNannies, action.payload];
     },
-    synchronizationLS(state, action) {
-      state.favoriteNannies = action.payload;
-    },
     deleteFavoriteNannies(state, action) {
       state.favoriteNannies = state.favoriteNannies?.filter(
         nanny => nanny.name !== action.payload
       );
+    },
+    synchronizationLS(state, action) {
+      state.favoriteNannies = action.payload;
+    },
+    setFiltrationCategory(state, action) {
+      state.filtrationCategory = action.payload;
     },
   },
 });
@@ -31,6 +35,7 @@ export const {
   addFavoriteNannies,
   deleteFavoriteNannies,
   synchronizationLS,
+  setFiltrationCategory,
 } = nanniesSlice.actions;
 
 export default nanniesSlice.reducer;
