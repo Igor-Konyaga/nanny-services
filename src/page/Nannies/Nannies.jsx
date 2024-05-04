@@ -3,7 +3,10 @@ import { StyledNanniesPage } from './Nannies.styled';
 import { useEffect } from 'react';
 import { getNanniesData } from '../../services/getDataFirebase';
 import { NanniesList } from 'components/NanniesList/NanniesList';
-import { synchronizationLS } from '../../redux/slices/nanniesData';
+import {
+  resetFiltrationCategory,
+  synchronizationLS,
+} from '../../redux/slices/nanniesData';
 import { Filters } from '../../components/Filters/Filters';
 
 export const Nannies = () => {
@@ -11,6 +14,7 @@ export const Nannies = () => {
 
   useEffect(() => {
     getNanniesData(dispatch);
+    dispatch(resetFiltrationCategory());
 
     const favotitesNanny = JSON.parse(localStorage.getItem('favorites')) || [];
 

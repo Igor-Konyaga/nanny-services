@@ -27,6 +27,9 @@ const nanniesSlice = createSlice({
     setFiltrationCategory(state, action) {
       state.filtrationCategory = action.payload;
     },
+    resetFiltrationCategory(state) {
+      state.filtrationCategory = 'Category';
+    },
   },
 });
 
@@ -36,6 +39,7 @@ export const {
   deleteFavoriteNannies,
   synchronizationLS,
   setFiltrationCategory,
+  resetFiltrationCategory,
 } = nanniesSlice.actions;
 
 export default nanniesSlice.reducer;

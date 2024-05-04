@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyledWrapperList } from './NanniesList.styled';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { nanniesList } from '../../redux/selectors/selectors';
 import { NanniesCard } from './NanniesCard/NanniesCard';
-import { sortedData } from 'services/filters';
+import { filtrationData } from 'services/filters';
 
 export const NanniesList = () => {
   const dataLimit = 3;
@@ -13,7 +13,11 @@ export const NanniesList = () => {
   const { nanniesData } = useSelector(nanniesList);
   const { favoriteNannies, filtrationCategory } = useSelector(nanniesList);
 
-  const data = sortedData(filtrationCategory, nanniesData) || nanniesData;
+  useEffect(() => {
+    setLimit(dataLimit);
+  }, [filtrationCategory]);
+
+  const data = filtrationData(filtrationCategory, nanniesData);
 
   const handleLoadMore = () => {
     setLimit(prevLimit => prevLimit + dataLimit);
@@ -25,7 +29,7 @@ export const NanniesList = () => {
     );
   };
 
-  const validArr = Array.isArray(nanniesData) && nanniesData.length > 0;
+  const validArr = Array.isArray(data) && data.length > 0;
 
   return (
     <StyledWrapperList>
@@ -43,7 +47,7 @@ export const NanniesList = () => {
           : ''}
       </ul>
 
-      {limit < nanniesData.length ? (
+      {limit < data.length ? (
         <button className="loadMoreBtn" onClick={handleLoadMore}>
           Load More
         </button>
