@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const StyledModal = styled.div`
   position: fixed;
@@ -42,3 +43,5 @@ export const StyledModal = styled.div`
     }
   }
 `;
+
+export const MStyledModal = motion(StyledModal);

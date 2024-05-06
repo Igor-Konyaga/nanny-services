@@ -3,15 +3,20 @@ import { StyledHomePage } from './Home.styled';
 import { ReactComponent as ArrowTop } from '../../images/icon/arrow top.svg';
 import { ReactComponent as Check } from '../../images/icon/сheck.svg';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { animateTitle } from '../../services/animate';
+
+
 
 export const Home = () => {
-
   return (
     <StyledHomePage>
       <div className="body">
         <Header />
         <div className="body__content">
-          <h1 className="body__title">Make Life Easier for the Family:</h1>
+          <motion.h1 {...animateTitle} className="body__title">
+            Make Life Easier for the Family:
+          </motion.h1>
           <p className="body__text">
             Find Babysitters Online for All Occasions
           </p>
@@ -35,3 +40,4 @@ export const Home = () => {
     </StyledHomePage>
   );
 };
+

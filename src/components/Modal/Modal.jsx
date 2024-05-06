@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
-import { StyledModal } from './Modal.styled';
+import { MStyledModal } from './Modal.styled';
 import { ReactComponent as ExitIcon } from '../../images/icon/exit.svg';
 import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
+import { animateModal, animateOverlay } from '../../services/animate';
 
 export const Modal = ({ children, openModal }) => {
   const authentication = useSelector(state => state.auth.token);
@@ -32,13 +34,13 @@ export const Modal = ({ children, openModal }) => {
   }, [openModal]);
 
   return (
-    <StyledModal onClick={handleClickModal}>
-      <div className="modal__body">
+    <MStyledModal {...animateOverlay} onClick={handleClickModal}>
+      <motion.div {...animateModal} className="modal__body">
         <button onClick={() => openModal(false)} className="modal__exit-icon">
           <ExitIcon />
         </button>
         {children}
-      </div>
-    </StyledModal>
+      </motion.div>
+    </MStyledModal>
   );
 };

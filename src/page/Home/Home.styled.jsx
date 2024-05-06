@@ -56,6 +56,7 @@ export const StyledHomePage = styled.div`
       .body__btn {
         width: 230px;
 
+
         a {
           display: flex;
           justify-content: space-between;
@@ -70,6 +71,12 @@ export const StyledHomePage = styled.div`
 
           font-size: 20px;
           font-weight: 500;
+			 
+
+          .icon {
+            transition: all 0.3s;
+            transform: rotate(0deg);
+          }
 
           &:hover,
           &:focus {
