@@ -1,5 +1,3 @@
-
-
 export const animateModal = {
   initial: {
     scale: 0,
@@ -29,13 +27,25 @@ export const animateOverlay = {
   },
 };
 
-export const animateTitle = {
-  animate: {
-    x: [-300, 0],
-    opacity: [0, 1],
-  },
-  transition: {
-    delay: 0.3,
-    duration: 1,
-  },
+export const variantsAnimTitle = {
+  hidden: { opacity: 0, x: -300 },
+  visible: i => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      delay: i * 0.3,
+    },
+  }),
+};
+export const variantsAnimCard = {
+  hidden: { opacity: 0, x: 500 },
+  visible: i => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      delay: i * 0.4,
+    },
+  }),
 };

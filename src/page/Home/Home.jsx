@@ -4,9 +4,7 @@ import { ReactComponent as ArrowTop } from '../../images/icon/arrow top.svg';
 import { ReactComponent as Check } from '../../images/icon/сheck.svg';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { animateTitle } from '../../services/animate';
-
-
+import { variantsAnimTitle } from '../../services/animate';
 
 export const Home = () => {
   return (
@@ -14,12 +12,24 @@ export const Home = () => {
       <div className="body">
         <Header />
         <div className="body__content">
-          <motion.h1 {...animateTitle} className="body__title">
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            custom={1}
+            variants={variantsAnimTitle}
+            className="body__title"
+          >
             Make Life Easier for the Family:
           </motion.h1>
-          <p className="body__text">
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            variants={variantsAnimTitle}
+            className="body__text"
+          >
             Find Babysitters Online for All Occasions
-          </p>
+          </motion.p>
           <button className="body__btn">
             <Link to={'nannies'}>
               Get started
@@ -40,4 +50,3 @@ export const Home = () => {
     </StyledHomePage>
   );
 };
-

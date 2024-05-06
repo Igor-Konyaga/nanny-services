@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { StyledCard } from './NanniesCard.styled';
+import { MStyledCard } from './NanniesCard.styled';
 import { ReactComponent as IconHeart } from '../../../images/icon/heart.svg';
 import { ReactComponent as IconLocation } from '../../../images/icon/location.svg';
 import { ReactComponent as IconStar } from '../../../images/icon/star.svg';
@@ -10,8 +10,10 @@ import {
   addFavoriteNannies,
   deleteFavoriteNannies,
 } from '../../../redux/slices/nanniesData';
+import { variantsAnimCard } from 'services/animate';
 
-export const NanniesCard = ({ nanny, isFavoriteNanny }) => {
+export const NanniesCard = ({ nanny, isFavoriteNanny, index }) => {
+  console.log(index);
   const dispatch = useDispatch();
   const {
     about,
@@ -57,7 +59,12 @@ export const NanniesCard = ({ nanny, isFavoriteNanny }) => {
   };
 
   return (
-    <StyledCard>
+    <MStyledCard
+      initial="hidden"
+      animate="visible"
+      variants={variantsAnimCard}
+      custom={index}
+    >
       <div className="wrapperImg">
         <span className="isOnline"></span>
         <img src={avatar_url} alt="avatar" width={96} height={96} />
@@ -127,6 +134,6 @@ export const NanniesCard = ({ nanny, isFavoriteNanny }) => {
           </button>
         )}
       </div>
-    </StyledCard>
+    </MStyledCard>
   );
 };

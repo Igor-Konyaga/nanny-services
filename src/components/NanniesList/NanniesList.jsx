@@ -35,9 +35,10 @@ export const NanniesList = () => {
     <StyledWrapperList>
       <ul className="listNannies">
         {validArr
-          ? data.slice(0, limit).map(nanny => {
+          ? data.slice(0, limit).map((nanny, index) => {
               return (
                 <NanniesCard
+                  index={index % 3 + 1}
                   isFavoriteNanny={isFavoriteNanny(nanny)}
                   key={nanny.name}
                   nanny={nanny}
