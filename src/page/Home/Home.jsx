@@ -4,7 +4,7 @@ import { ReactComponent as ArrowTop } from '../../images/icon/arrow top.svg';
 import { ReactComponent as Check } from '../../images/icon/сheck.svg';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { variantsAnimTitle } from '../../services/animate';
+import { animateBtn, variantsAnimTitle } from '../../services/animate';
 
 export const Home = () => {
   return (
@@ -30,12 +30,12 @@ export const Home = () => {
           >
             Find Babysitters Online for All Occasions
           </motion.p>
-          <button className="body__btn">
+          <motion.button {...animateBtn} className="body__btn">
             <Link to={'nannies'}>
               Get started
               <ArrowTop className="icon" />
             </Link>
-          </button>
+          </motion.button>
         </div>
         <div className="body__statistics ">
           <div className="body__statistics-icon">

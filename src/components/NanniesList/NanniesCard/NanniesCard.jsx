@@ -13,7 +13,6 @@ import {
 import { variantsAnimCard } from 'services/animate';
 
 export const NanniesCard = ({ nanny, isFavoriteNanny, index }) => {
-  console.log(index);
   const dispatch = useDispatch();
   const {
     about,

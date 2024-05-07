@@ -5,7 +5,7 @@ export const HeaderButtons = ({
   setOpenModalLogIn,
   setOpenModalRegistration,
 }) => {
-  const custonStyle = 'background-color: #F03F3B; ';
+  const customStyle = 'background-color: #F03F3B; ';
 
   return (
     <StyledWrapperButtons>
@@ -13,7 +13,7 @@ export const HeaderButtons = ({
         Log In
       </Button>
       <Button
-        styleProps={custonStyle}
+        styleProps={customStyle}
         type="button"
         event={() => setOpenModalRegistration(true)}
       >
